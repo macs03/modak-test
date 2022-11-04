@@ -1,4 +1,4 @@
-import { Text, TextProps } from "./Themed";
+import { Text } from "./Themed";
 
 export function MonoText(props) {
   return (
