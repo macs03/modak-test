@@ -70,17 +70,19 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="ArtWorks"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
+        name="ArtWorks"
         component={TabOneScreen}
         options={({ navigation }) => ({
-          title: "Tab One",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "ArtWorks",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="paint-brush" color={color} />
+          ),
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate("Modal")}
@@ -99,11 +101,11 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Favorites"
         component={TabTwoScreen}
         options={{
-          title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />
+          title: "Favorites",
+          tabBarIcon: ({ color }) => <TabBarIcon name="star" color={color} />
         }}
       />
     </BottomTab.Navigator>
