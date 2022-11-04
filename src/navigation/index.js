@@ -18,8 +18,8 @@ import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen/NotFoundScreen";
-import TabOneScreen from "../screens/TabOneScreen/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen/TabTwoScreen";
+import ArtWorks from "../screens/ArtWorks/ArtWorks";
+import Favorites from "../screens/Favorites/Favorites";
 import LinkingConfiguration from "./LinkingConfiguration";
 
 export default function Navigation({ colorScheme }) {
@@ -77,7 +77,7 @@ function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="ArtWorks"
-        component={TabOneScreen}
+        component={ArtWorks}
         options={({ navigation }) => ({
           title: "ArtWorks",
           tabBarIcon: ({ color }) => (
@@ -102,7 +102,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Favorites"
-        component={TabTwoScreen}
+        component={Favorites}
         options={{
           title: "Favorites",
           tabBarIcon: ({ color }) => <TabBarIcon name="star" color={color} />
