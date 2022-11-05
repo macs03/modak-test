@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  darkColor="rgba(255,255,255,0.1)"
+  lightColor="#eee"
+  style={
+    Array [
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "#aaa",
+        "height": 1,
+        "width": "95%",
+      },
+    ]
+  }
+/>
+`;

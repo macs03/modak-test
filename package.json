@@ -35,7 +35,10 @@
     "react-native-web": "~0.18.7"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupFiles": [
+      "./jest/setup.js"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

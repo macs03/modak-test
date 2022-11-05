@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          Array [
+            Object {
+              "flexDirection": "row",
+              "height": 77.5,
+            },
+            undefined,
+            false,
+          ],
+        ]
+      }
+    >
+      <View
+        modifiers={
+          Object {
+            "alignments": Object {
+              "alignItems": "flex-start",
+            },
+            "backgroundColor": undefined,
+            "borderRadius": undefined,
+            "color": undefined,
+            "flexStyle": undefined,
+            "margins": Object {},
+            "paddings": Object {},
+            "positionStyle": undefined,
+            "typography": undefined,
+          }
+        }
+        style={
+          Array [
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            Object {},
+            Object {},
+            Object {
+              "alignItems": "flex-start",
+            },
+            Array [
+              Object {
+                "alignItems": "center",
+                "flex": 0,
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        <Image
+          accessibilityRole="image"
+          accessible={false}
+          assetGroup="icons"
+          onError={[Function]}
+          source={
+            Object {
+              "uri": "https://www.artic.edu/iiif/2/345/full/200,/0/default.jpg",
+            }
+          }
+          style={
+            Array [
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              false,
+              Object {
+                "borderRadius": 6,
+                "height": 54,
+                "marginHorizontal": 14,
+                "width": 54,
+              },
+              false,
+            ]
+          }
+        />
+      </View>
+      <View
+        column={true}
+        middle={true}
+        modifiers={
+          Object {
+            "alignments": Object {},
+            "backgroundColor": undefined,
+            "borderRadius": undefined,
+            "color": undefined,
+            "flexStyle": undefined,
+            "margins": Object {},
+            "paddings": Object {},
+            "positionStyle": undefined,
+            "typography": undefined,
+          }
+        }
+        style={
+          Array [
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            Object {},
+            Object {},
+            Object {},
+            Array [
+              Object {
+                "alignItems": undefined,
+                "flex": 1,
+                "flexDirection": undefined,
+                "justifyContent": "center",
+              },
+              Array [
+                Object {
+                  "borderBottomWidth": 0.5,
+                  "borderColor": "#F0F2F5",
+                },
+                Object {
+                  "paddingRight": 17,
+                },
+              ],
+            ],
+          ]
+        }
+      >
+        <View
+          modifiers={Object {}}
+          style={
+            Array [
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 0,
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                },
+                Object {
+                  "marginBottom": 3,
+                },
+              ],
+            ]
+          }
+        >
+          <Text
+            grey10={true}
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#20303C",
+                  "textAlign": "left",
+                },
+                Object {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "lineHeight": 24,
+                },
+                Object {
+                  "color": "#20303C",
+                },
+                undefined,
+                undefined,
+                Object {},
+                undefined,
+                undefined,
+                undefined,
+                Object {
+                  "flex": 1,
+                  "marginRight": 10,
+                },
+              ]
+            }
+            text70={true}
+          >
+            tests
+          </Text>
+          <Text
+            grey10={true}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#20303C",
+                  "textAlign": "left",
+                },
+                Object {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "lineHeight": 24,
+                },
+                Object {
+                  "color": "#20303C",
+                },
+                undefined,
+                undefined,
+                Object {},
+                undefined,
+                undefined,
+                undefined,
+                Object {
+                  "marginTop": 2,
+                },
+              ]
+            }
+            text70={true}
+          >
+            tests
+          </Text>
+        </View>
+        <View
+          modifiers={Object {}}
+          style={
+            Array [
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flex": 0,
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#20303C",
+                  "textAlign": "left",
+                },
+                Object {
+                  "fontFamily": "System",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "lineHeight": 16,
+                },
+                undefined,
+                undefined,
+                undefined,
+                Object {},
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
+            text90={true}
+          >
+            test
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
