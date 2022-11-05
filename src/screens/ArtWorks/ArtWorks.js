@@ -1,6 +1,7 @@
 import { View, Text, LoaderScreen, Colors } from "react-native-ui-lib";
-import { FlatList } from "react-native";
-import { useState, useEffect } from "react";
+import { FlatList, Pressable } from "react-native";
+import { useState, useLayoutEffect } from "react";
+import { FontAwesome } from "@expo/vector-icons";
 
 import useFetch from "../../hooks/useFetch";
 import ArtItem from "../../components/ArtItem/ArtItem";
@@ -8,6 +9,26 @@ import Separator from "../../components/Separator/Separator";
 import styles from "./styles";
 
 function ArtWorks({ navigation }) {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Pressable
+          onPress={() => setPage(1)}
+          style={({ pressed }) => ({
+            opacity: pressed ? 0.5 : 1
+          })}
+        >
+          <FontAwesome
+            name="refresh"
+            size={25}
+            color={Colors.black}
+            style={{ marginRight: 15 }}
+          />
+        </Pressable>
+      )
+    });
+  }, [navigation]);
+
   const [page, setPage] = useState(1);
 
   const { isLoading, data, error } = useFetch({
@@ -17,16 +38,10 @@ function ArtWorks({ navigation }) {
       limit: 20 * page
     }
   });
-  // const { isLoading, data, error, isFetching } = useFetch({
-  //   endpoint: "artworkById",
-  //   options: {
-  //     id: 263923
-  //   }
-  // });
 
-  console.log("first");
-  console.log(data);
-  // console.log(page);
+  const onHandlePress = id => {
+    navigation.navigate("Modal", { itemId: id });
+  };
 
   if (isLoading) {
     return <LoaderScreen message={"Loading..."} color={Colors.grey40} />;
@@ -48,13 +63,14 @@ function ArtWorks({ navigation }) {
     <View style={styles.container}>
       <FlatList
         data={data}
-        renderItem={({ item }) => <ArtItem item={item} />}
+        renderItem={({ item }) => (
+          <ArtItem item={item} onPressItem={onHandlePress} />
+        )}
         keyExtractor={({ _, index }) => index}
         onEndReached={() => {
-          console.log("reaching");
           setPage(prevPage => prevPage + 1);
         }}
-        onEndReachedThreshold={0.8}
+        onEndReachedThreshold={0}
         ItemSeparatorComponent={() => <Separator />}
       />
     </View>

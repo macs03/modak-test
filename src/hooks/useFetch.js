@@ -1,4 +1,3 @@
-import { useQuery } from "react-query";
 import { useEffect, useState } from "react";
 
 const API_BASE_URL = "https://api.artic.edu/api/v1";
@@ -39,7 +38,7 @@ function useFetch({ endpoint, options }) {
 
   useEffect(() => {
     fetching();
-  }, [options.page]);
+  }, [options.page, options.id]);
 
   return { isLoading, data, error };
 }

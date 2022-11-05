@@ -3,15 +3,14 @@ import { Alert } from "react-native";
 
 import styles from "./styles";
 
-function ArtItem(itemData) {
-  const { item } = itemData;
+function ArtItem({ item, onPressItem }) {
   return (
     <View>
       <ListItem
         activeBackgroundColor={Colors.grey60}
         activeOpacity={0.3}
         height={77.5}
-        onPress={() => Alert.alert(`pressed on order #${item.id}`)}
+        onPress={() => onPressItem(item.id)}
       >
         <ListItem.Part left>
           <Image
