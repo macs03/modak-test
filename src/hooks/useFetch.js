@@ -11,7 +11,6 @@ const endpoints = {
     return response.json();
   },
   artworkById: async ({ id }) => {
-    console.log("object", id);
     const response = await fetch(`${API_BASE_URL}/artworks/${id}`);
 
     return response.json();

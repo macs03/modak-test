@@ -13,6 +13,8 @@ import { useLayoutEffect } from "react";
 
 import useFetch from "../../hooks/useFetch";
 
+import Favorite from "../../components/Favorite/Favorite";
+
 import styles from "./styles";
 
 export default function ModalScreen({
@@ -31,21 +33,7 @@ export default function ModalScreen({
   useLayoutEffect(() => {
     navigation.setOptions({
       title: `Item ${itemId}`,
-      headerRight: () => (
-        <Pressable
-          onPress={() => {}}
-          style={({ pressed }) => ({
-            opacity: pressed ? 0.5 : 1
-          })}
-        >
-          <FontAwesome
-            name="star"
-            size={25}
-            color={Colors}
-            style={{ marginRight: 15 }}
-          />
-        </Pressable>
-      )
+      headerRight: () => <Favorite itemId={itemId} />
     });
   }, [navigation, itemId]);
 
