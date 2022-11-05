@@ -1,14 +1,31 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Pressable } from "react-native";
 import { Colors } from "react-native-ui-lib";
 import { FontAwesome } from "@expo/vector-icons";
 
-const Favorite = ({ itemId }) => {
-  const [marked, setMarked] = useState(false);
+import FavoritesContext from "../../lib/store/FavoritesContext";
+
+const Favorite = ({ itemId, onPress }) => {
+  const [state, dispatch] = useContext(FavoritesContext);
+
+  const { favorites } = state;
+
+  let initialState = false;
+
+  favorites.forEach(favorite => {
+    if (favorite.id === itemId) {
+      initialState = true;
+    }
+  });
+
+  const [marked, setMarked] = useState(initialState);
 
   return (
     <Pressable
-      onPress={() => setMarked(!marked)}
+      onPress={() => {
+        setMarked(!marked);
+        onPress(!marked);
+      }}
       style={({ pressed }) => ({
         opacity: pressed ? 0.5 : 1
       })}

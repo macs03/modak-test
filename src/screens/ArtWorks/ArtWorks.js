@@ -39,8 +39,8 @@ function ArtWorks({ navigation }) {
     }
   });
 
-  const onHandlePress = id => {
-    navigation.navigate("Modal", { itemId: id });
+  const onHandlePress = item => {
+    navigation.navigate("Modal", { itemId: item.id, item });
   };
 
   if (isLoading) {
@@ -64,7 +64,7 @@ function ArtWorks({ navigation }) {
       <FlatList
         data={data}
         renderItem={({ item }) => (
-          <ArtItem item={item} onPressItem={onHandlePress} />
+          <ArtItem item={item} onPressItem={() => onHandlePress(item)} />
         )}
         keyExtractor={({ _, index }) => index}
         onEndReached={() => {

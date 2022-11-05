@@ -7,11 +7,12 @@ import {
   AnimatedScanner,
   LoaderScreen
 } from "react-native-ui-lib";
-import { Pressable, ScrollView } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-import { useLayoutEffect } from "react";
+import { ScrollView } from "react-native";
+import { useLayoutEffect, useContext } from "react";
 
 import useFetch from "../../hooks/useFetch";
+import FavoritesContext from "../../lib/store/FavoritesContext";
+import { addFavorite, removeFavorite } from "../../lib/store/actions/actions";
 
 import Favorite from "../../components/Favorite/Favorite";
 
@@ -20,9 +21,11 @@ import styles from "./styles";
 export default function ModalScreen({
   navigation,
   route: {
-    params: { itemId }
+    params: { itemId, item }
   }
 }) {
+  const [state, dispatch] = useContext(FavoritesContext);
+
   const { isLoading, data, error } = useFetch({
     endpoint: "artworkById",
     options: {
@@ -30,10 +33,18 @@ export default function ModalScreen({
     }
   });
 
+  const onHandlePress = flag => {
+    if (flag) {
+      dispatch(addFavorite(item));
+    } else {
+      dispatch(removeFavorite(itemId));
+    }
+  };
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: `Item ${itemId}`,
-      headerRight: () => <Favorite itemId={itemId} />
+      headerRight: () => <Favorite itemId={itemId} onPress={onHandlePress} />
     });
   }, [navigation, itemId]);
 
